@@ -1,0 +1,101 @@
+a {
+  font-weight: 600;
+  color: #626bb0;
+  font-family: 'Nunito Sans',sans-serif;
+}
+
+a:hover {
+  color: #777777;
+  font-weight: 600;
+  font-family: 'Nunito Sans',sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.icon-bar {
+  z-index: 1;
+  position: fixed;
+  width: 5rem;
+  right: 0;
+}
+.icon {
+  width: 3rem;
+  margin-bottom: 0.5rem;
+}
+.icon:hover {
+  filter: grayscale(75%);
+}
+
+.container {
+  max-width: 40rem;
+  margin: auto;
+  font-family: 'Nunito Sans',sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
+  color: #424242;
+}
+
+.image-holder {
+  text-align: center;
+}
+.centered {
+  text-align: center;
+}
+
+#rj-face {
+  width: 13rem;
+  height: auto;
+}
+
+#name-title {
+  font-size: 2.75rem;
+  margin-top: 0.65rem;
+  color: #000000;
+  font-family: 'Nunito Sans',sans-serif;
+}
+
+#intro-text {
+  padding-left: 0.75rem;
+}
+
+#projects-title {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 2.4rem;
+  color: #292929;
+}
+
+.project-text {
+  padding-left: 1.5rem;
+  padding-right: 0.5rem;
+}
+.project-item {
+  margin-bottom: 5rem;
+}
+
+/* Mobile only css */
+@media only screen and (max-width: 760px) {
+  .container {
+    font-size: 1.1rem;
+    font-family: 'Nunito Sans',sans-serif;
+    line-height: 1.5rem;
+  }
+  .project-text {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+  .button-link {
+    width: 9rem;
+  }
+}
+/* Hide icon bar earlier */
+@media only screen and (max-width: 800px) {
+  .icon-bar {
+    display: none;
+  }
+}
