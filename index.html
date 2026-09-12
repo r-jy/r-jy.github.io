@@ -2,57 +2,114 @@
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Rui-Jie Yew</title>
   
-  <meta name="author" content="Rui-Jie yew">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Rui-Jie Yew">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <style>
-    body, td, th, tr, p, a, strong, heading, papertitle, name {
-      font-family: 'Times New Roman', Times, serif;
+    * {
+      font-family: 'Times New Roman', Times, serif !important;
+      font-weight: normal !important;
     }
-    body { background-color: #ffffff; }
-    a { color: #555; text-decoration: none; }
-    a:focus, a:hover { color: #9b8ec4; text-decoration: none; }
-    body, td, th, tr, p, a { font-size: 14px; }
-    strong { font-size: 14px; }
-    heading { font-size: 22px; }
-    papertitle { font-size: 14px; font-weight: 700; }
-    name { font-size: 32px; }
-    span.highlight { background-color: #ffffd0; }
+    body { 
+      background-color: #fff0f5; /* Soft pastel pink (lavender blush) */
+      color: #000000; 
+    }
+    a { 
+      color: #0000ee; 
+      text-decoration: underline; 
+    }
+    a:focus, a:hover { 
+      color: #0000ee; 
+      text-decoration: underline; 
+    }
+    body, td, th, tr, p, a { font-size: 15px; }
+    strong { font-size: 15px; color: #000000; }
+    heading { font-size: 22px; color: #000000; }
+    
+    papertitle { 
+      font-size: 15px; 
+      color: #000000;
+      text-decoration: none;
+    }
+    a papertitle, papertitle a {
+      color: #0000ee;
+      text-decoration: underline;
+    }
+
+    name { 
+      font-size: 32px; 
+      color: #000000; 
+      letter-spacing: 0.5px;
+    }
+    
+    span.highlight { 
+      background-color: transparent; 
+      color: #000000;
+      padding: 0;
+    }
+    
+    .date-highlight {
+      color: #000000;
+    }
+
     .award {
       display: inline-block;
-      background: #ece8f5;
-      border: 1.5px solid #b0a0cc;
-      color: #7b68a0;
+      background: transparent;
+      border: 1px solid #000000;
+      color: #000000;
       font-size: 0.78rem;
-      font-weight: normal;
-      padding: 1px 7px;
+      padding: 1px 6px;
       margin-left: 4px;
     }
 
-    /* tabs */
+    /* Simple monochrome tabs */
     .tab-bar {
       padding: 0 10px;
-      border-bottom: 1.5px solid #333;
+      border-bottom: 1px solid #000000;
       margin-bottom: 4px;
       display: flex;
-      gap: 0;
+      gap: 4px;
     }
     .tab-btn {
-      font-family: 'Times New Roman', Times, serif;
       font-size: 15px;
       background: none;
       border: none;
-      border-bottom: 2.5px solid transparent;
-      margin-bottom: -1.5px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
       padding: 6px 18px 8px;
       cursor: pointer;
-      color: #888;
+      color: #666666;
     }
-    .tab-btn:hover { color: #333; }
-    .tab-btn.active { color: #111; border-bottom-color: #5c4a8a; }
+    .tab-btn:hover { 
+      color: #000000;
+    }
+    .tab-btn.active { 
+      color: #000000; 
+      border-bottom-color: #000000; 
+    }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
+    .tab-panel td p:first-child { margin-top: 0; }
+
+    /* Smaller circular profile picture */
+    .profile-img {
+      width: 125px;
+      height: 125px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* Enlarged talk thumbnail image */
+    .talk-img {
+      width: 210px;
+      max-width: 210px;
+      height: 135px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid #ddd;
+    }
   </style>
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
 </head>
 
 <body>
@@ -61,96 +118,166 @@
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Rui-Jie Yew </name>
-              </p>
-              <p>I am a PhD student in computer science at <a href= "https://cs.brown.edu">Brown University</a> and the  <a href= "http://cntr.brown.edu">CNTR</a> advised by Suresh Venkatasubramanian. I'm interested in questions at the intersection of CS and policy, with an emphasis on incentives, alignment, and avoision.</p>
-              <p> Currently, I am a spring 2026 Law and Society Fellow at the <a href="https://simons.berkeley.edu/homepage">Simons Institute for the Theory of Computing at UC Berkeley</a>.</p>
-              <p> Previously, I received an S.M. in technology and policy from <a href="tpp.mit.edu">MIT</a> advised by Dylan Hadfield-Menell and a joint B.A. in computer science and mathematics from <a href="scrippscollege.edu">Scripps College</a> as a cross-campus major at <a href="https://www.hmc.edu/cs/academic-policies/cross-campus-students/">Harvey Mudd College</a>.</p>
-              <p> Reach me at: [my github username] at brown.edu.</p>
+            <td style="padding:15px 15px 15px 5px; width:135px; vertical-align:top;">
+              <img class="profile-img" alt="profile photo" src="photo.jpg">
             </td>
-            <td style="padding:2.5%;width:20%;max-width:160px;vertical-align:middle">
-              <a><img style="width:100%;max-width:100%;border-radius:4px;" alt="profile photo" src="photo.jpg" class="hoverZoomLink"></a>
-              outside the Calvin Lab! :)
+            <td style="padding:10px 5px 15px 15px; vertical-align:top;">
+              <p style="margin-top:0; margin-bottom:12px;">
+                <name>Rui-Jie Yew</name>
+              </p>
+              <p style="margin-top:0;"> I am a final-year PhD student in computer science at <a href="https://cs.brown.edu">Brown University</a> and the <a href="http://cntr.brown.edu">CNTR</a>, where I am fortunate to be advised by Professor Suresh Venkatasubramanian. I conduct interdisciplinary research in tech policy and law with an emphasis on loopholes, avoision, and incentives.</p>
+              <p> Currently, I am an ML PhD / AI resident at <a href="https://x.company/factory/">[Google] X, The Moonshot Factory</a>. I was recently a spring 2026 law and society fellow at the <a href="https://simons.berkeley.edu/homepage">Simons Institute for the Theory of Computing at UC Berkeley</a>.</p>
+              <p> I hold an S.M. in technology and policy from <a href="https://mit.edu">MIT</a> and a B.A. from <a href="https://scrippscollege.edu">Scripps College</a>.</p>
             </td>
           </tr>
-
         </tbody></table>
-      
+
       <div class="tab-bar">
         <button class="tab-btn active" onclick="switchTab('research',this)">Research</button>
         <button class="tab-btn" onclick="switchTab('news',this)">News</button>
-        <button class="tab-btn" onclick="switchTab('other',this)">Experience</button>
-        <button class="tab-btn" onclick="switchTab('misc',this)">Name Pronunciation & Miscellaneous</button>
+        <button class="tab-btn" onclick="switchTab('talks',this)">Talks</button>
+        <button class="tab-btn" onclick="switchTab('heart',this)">♡</button>
       </div>
 
+
+      <!-- NEWS TAB -->
       <div id="tab-news" class="tab-panel">
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        
+        <tr>
+        <td style="padding:10px;width:75%;vertical-align:middle">
+         <span class="date-highlight">Apr 30, 2026</span>: Co-organized the Governance at the Technological Frontier Workshop at the Simons Institute for the Theory of Computing, hosting the first-ever sitting public official at the Simons Institute.
+        </td>
+        </tr>
 
          <tr>
         <td style="padding:10px;width:75%;vertical-align:middle">
-         <span style="color: #5c4a8a"><strong>Feb 25, 2026</strong></span>: Student volunteer for the <a href="https://www.sigecom.org/meetings/winter26/">2026 SIGecom Winter Meeting on Algorithmic Game Theory, AI, and the Law</a>. Look out for our highlights coming soon!
+         <span class="date-highlight">Feb 25, 2026</span>: Student volunteer for the <a href="https://www.sigecom.org/meetings/winter26/">2026 SIGecom Winter Meeting on Algorithmic Game Theory, AI, and the Law</a>.
         </td>
         </tr>
 
         <tr>
         <td style="padding:10px;width:75%;vertical-align:middle">
-         <span style="color: #5c4a8a"><strong>Feb 11, 2026</strong></span>: Gave a talk on Alignment Problems in AI Governance at the Simons Institute for the Theory of Computing with Greg Demirchyan. Recording available <a href="https://www.youtube.com/watch?v=rV2PFHQzj48">here</a>.
+         <span class="date-highlight">Feb 11, 2026</span>: Gave a talk on Alignment Problems in AI Governance at the Simons Institute for the Theory of Computing with Greg Demirchyan. Recording available <a href="https://www.youtube.com/watch?v=rV2PFHQzj48">here</a>.
         </td>
         </tr>
 
-        
        <tr>
         <td style="padding:10px;width:75%;vertical-align:middle">
-          <span style="color: #5c4a8a"><strong>Dec 05, 2025</strong></span>: Defended my dissertation proposal!
+          <span class="date-highlight">Dec 05, 2025</span>: Defended my dissertation proposal! Lucky to have Professors Serena Booth and Bryan Choi on my dissertation committee.
         </tr>
 
         <tr>
         <td style="padding:10px;width:75%;vertical-align:middle">
-         <span style="color: #5c4a8a"><strong>Sep 12, 2025</strong></span>: Our work on <a href="https://www.techpolicy.press/sovereignty-myth-making-in-the-ai-race/">sovereign AI</a> was covered in <a href="https://restofworld.org/2025/chinese-us-tech-foreign-ai-dependence/">Rest of World</a>.
+         <span class="date-highlight">Sep 12, 2025</span>: Our work on <a href="https://www.techpolicy.press/sovereignty-myth-making-in-the-ai-race/">sovereign AI</a> was covered in <a href="https://restofworld.org/2025/chinese-us-tech-foreign-ai-dependence/">Rest of World</a>.
         </td>
         </tr>
 
         <tr>
         <td style="padding:10px;width:75%;vertical-align:middle">
-         <span style="color: #5c4a8a"><strong>Aug 14, 2025</strong></span>: Gave a talk on Red Teaming AI Policy as part of the <a href="https://www.dlapiper.com/en-us">DLA Piper</a> guest speaker series. Thanks to the inspirational Bogdana Rakova for the invitation!
+         <span class="date-highlight">Aug 14, 2025</span>: Gave a talk on Red Teaming AI Policy as part of the <a href="https://www.dlapiper.com/en-us">DLA Piper</a> guest speaker series. Thanks to the inspirational Bogdana Rakova for the invitation!
         </td>
         </tr>
 
         <tr>
         <td style="padding:10px;width:75%;vertical-align:middle">
-         <span style="color: #5c4a8a"><strong>May 20, 2025</strong></span>: Gave a talk on Data Privacy and AI at <a href="https://www.upperbound.ai">UpperBound AI</a> (organized by the University of Alberta) in Edmonton, Canada. Thanks to the amazing Professor Bailey Kacsmar for the invitation!
+         <span class="date-highlight">May 20, 2025</span>: Gave a talk on Data Privacy and AI at <a href="https://www.upperbound.ai">UpperBound AI</a> (organized by the University of Alberta) in Edmonton, Canada. Thanks to the amazing Professor Bailey Kacsmar for the invitation!
         </td>
         </tr>
 
         <tr>
         <td style="padding:10px;width:75%;vertical-align:middle">
-         <span style="color: #5c4a8a"><strong>Mar 09-14, 2025</strong></span>: Attended <a href="https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/25112">Schloss Dagstuhl Seminar 25112</a> on privacy-enhancing technologies and AI in Wadern, Germany (where I met and reunited with my research role models). Thanks to the organizers for the invitation!
+         <span class="date-highlight">Mar 09-14, 2025</span>: Attended <a href="https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/25112">Schloss Dagstuhl Seminar 25112</a> on privacy-enhancing technologies and AI in Wadern, Germany (where I met and reunited with my research role models). Thanks to the organizers for the invitation!
         </td>
         </tr>
 
         <tr>
         <td style="padding:10px;width:75%;vertical-align:middle">
-         <span style="color: #5c4a8a"><strong>Feb 17, 2025</strong></span>:  Gave a talk on Data Protection and AI for the <a href="https://zest-vessel-e71.notion.site/FATE-Society-Reading-Group-61723b738ba04f8daeb28512e6f8c64e">Mila - Quebec AI Institute FATE and Society Reading Group</a>. Thanks to Khaoula Chehbouni and Taylor Lynn Curtis for the opportunity to speak with such a wonderful audience!
+         <span class="date-highlight">Feb 17, 2025</span>: Gave a talk on Data Protection and AI for the <a href="https://zest-vessel-e71.notion.site/FATE-Society-Reading-Group-61723b738ba04f8daeb28512e6f8c64e">Mila - Quebec AI Institute FATE and Society Reading Group</a>. Thanks to Khaoula Chehbouni and Taylor Lynn Curtis for the opportunity to speak with such a wonderful audience!
         </td>
         </tr>
 
       </tbody></table>
       </div>
 
+
+      <!-- TALKS TAB -->
+      <div id="tab-talks" class="tab-panel">
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:15px 10px;width:220px;vertical-align:top">
+            <img class="talk-img" src="images/governance-frontier.jpg" alt="Governance at the Technological Frontier Workshop">
+          </td>
+          <td style="padding:15px 10px;vertical-align:top">
+            <papertitle><strong>Governance at the Technological Frontier</strong></papertitle><br>
+            <em>Simons Institute for the Theory of Computing, UC Berkeley</em><br>
+            <span class="date-highlight">April 30, 2026</span><br>
+            Q&A with CA Senator.<br>
+            <a href="https://www.youtube.com/watch?v=05iGoQMcqKc&t=69s&pp=ygUVamVycnkgbWNuZXJuZXkgc2ltb25z">[Video Recording]</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:15px 10px;width:220px;vertical-align:top">
+            <img class="talk-img" src="images/alignment-problems.jpg" alt="Alignment Problems in AI Governance">
+          </td>
+          <td style="padding:15px 10px;vertical-align:top">
+            <papertitle><strong>Alignment Problems in AI Governance</strong></papertitle><br>
+            <em>Simons Institute for the Theory of Computing, UC Berkeley</em><br>
+            <span class="date-highlight">February 11, 2026</span><br>
+            Joint talk with Greg Demirchyan.<br>
+            <a href="https://www.youtube.com/watch?v=rV2PFHQzj48">[Video Recording]</a>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:15px 10px;width:220px;vertical-align:top">
+            <img class="talk-img" src="images/upperbound.jpg" alt="Data Privacy and AI at UpperBound">
+          </td>
+          <td style="padding:15px 10px;vertical-align:top">
+            <papertitle><strong>Data Privacy and AI</strong></papertitle><br>
+            <em>UpperBound AI (University of Alberta), Edmonton, Canada</em><br>
+            <span class="date-highlight">May 20, 2025</span><br>
+            Invited talk on data privacy, protection, and machine learning regulation.
+          </td>
+        </tr>
+
+      </tbody></table>
+      </div>
+
+
+      <!-- RESEARCH TAB -->
       <div id="tab-research" class="tab-panel active">
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-
+        <tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-  <a href="https://arxiv.org/pdf/2512.11815">
-  <papertitle>Video Deepfake Abuse: How Company Choices Predictably Shape Misuse Patterns</papertitle> <br>
-  </a>
+  [13] <papertitle>SIGecom Winter Highlights: Algorithmic Game Theory, AI, and the Law</papertitle> <br>
+  Sara Fish,
+  Vrinda Pareek,
+  Rui-Jie Yew
+  <br>
+  <em>SIGecom Exchanges</em> 2026<br>
+</td>
+</tr>
+
+<tr>
+<td style="padding:10px;width:75%;vertical-align:middle">
+  [12] <papertitle>Red Teaming the Rules: An Adversarial Approach to Legal Alignment</papertitle> <br>
+  Rui-Jie Yew,
+  Greg Demirchyan
+  <br>
+  <em>ICLR Workshop on Algorithmic Fairness Across Alignment Procedures and Agentic Systems</em> 2026<br>
+</td>
+</tr>
+
+<tr>
+<td style="padding:10px;width:75%;vertical-align:middle">
+  [11] <a href="https://arxiv.org/pdf/2512.11815">
+  <papertitle>Video Deepfake Abuse: How Company Choices Predictably Shape Misuse Patterns</papertitle>
+  </a> <br>
   Max Kamachee,
   Stephen Casper,
   Michelle L. Ding,
-  <strong>Rui-Jie Yew</strong>,
+  Rui-Jie Yew,
   Anka Reuel,
   Stella Biderman,
   Dylan Hadfield-Menell
@@ -159,11 +286,12 @@
 </td>
 </tr>
 
+<tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-  <a href="https://dl.acm.org/doi/10.1145/3757887.3763017">
-  <papertitle>Anti-Regulatory AI: How "AI Safety" is Leveraged Against Regulatory Oversight</papertitle> <br>
-  </a>
-  <strong>Rui-Jie Yew</strong>,
+  [10] <a href="https://dl.acm.org/doi/10.1145/3757887.3763017">
+  <papertitle>Anti-Regulatory AI: How "AI Safety" is Leveraged Against Regulatory Oversight</papertitle>
+  </a> <br>
+  Rui-Jie Yew,
   Brian Judge
   <br>
   <em>ACM EAAMO</em>, 2025<br> 
@@ -172,11 +300,12 @@
 </td>
 </tr>
 
+<tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-  <a href="https://arxiv.org/pdf/2506.01931">
-    <papertitle>Red Teaming AI Policy: A Taxonomy of Avoision and the EU AI Act</papertitle> <br>
-  </a>
-    <strong>Rui-Jie Yew*</strong>,
+  [9] <a href="https://arxiv.org/pdf/2506.01931">
+    <papertitle>Red Teaming AI Policy: A Taxonomy of Avoision and the EU AI Act</papertitle>
+  </a> <br>
+    Rui-Jie Yew*,
     Bill Marino*,
     Suresh Venkatasubramanian
     <br>
@@ -184,26 +313,27 @@
   </td>
 </tr>
 
+<tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-  <a href="https://dl.acm.org/doi/pdf/10.1145/3715336.3735683">
+  [8] <a href="https://dl.acm.org/doi/pdf/10.1145/3715336.3735683">
     <papertitle>Copyrighting Generative AI Co-Creations</papertitle>
 </a>
     <br>
     Jeff Huang,
-    <strong>Rui-Jie Yew</strong>,
+    Rui-Jie Yew,
     Suresh Venkatasubramanian
     <br>
     <em>ACM DIS</em>, 2025 <span class="award">best paper award</span><br>
   </td>
   </tr>
 
-
+  <tr>
   <td style="padding:10px;width:75%;vertical-align:middle">
-   <a href="https://arxiv.org/abs/2402.06609">
+   [7] <a href="https://arxiv.org/abs/2402.06609">
     <papertitle>You Still See Me: How Data Protection Supports the Architecture of AI Surveillance</papertitle>
    </a>
     <br>
-    <strong>Rui-Jie Yew</strong>,
+    Rui-Jie Yew,
     Lucy Qin,
     Suresh Venkatasubramanian
     <br>
@@ -213,13 +343,13 @@
   </td>
   </tr>
 
-
+<tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-<a href="https://dl.acm.org/doi/pdf/10.1145/3614407.3643707">
+[6] <a href="https://dl.acm.org/doi/pdf/10.1145/3614407.3643707">
 <papertitle>Break It 'Til You Make It: An Exploration of the Ramifications of Copyright Liability Under a Pretraining Paradigm of AI Development</papertitle>
 </a>
 <br>
-<strong>Rui-Jie Yew</strong>
+Rui-Jie Yew
 <br>
 <em>ACM Symposium on CS&LAW</em>, 2024 <br>
 Poster at  <em>WeRobot</em>, 2023 <br>
@@ -228,22 +358,24 @@ A version of this work appeared at the <em>ICML Workshop on Generative AI and La
 </td>
 </tr>
 
+<tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-<a href="https://openreview.net/pdf?id=75GEQc7Dmp">
+[5] <a href="https://openreview.net/pdf?id=75GEQc7Dmp">
   <papertitle>Where did you learn that?: Tracing the Impact of Training Data with Diffusion Model Ensembles</papertitle>
 </a>
   <br>
   Zheng Dai,
-  <strong>Rui-Jie Yew</strong>,
+  Rui-Jie Yew,
   David K. Gifford
   <br>
   <em>NeurIPS Workshop on Regulatable ML</em>, 2023
   <br>
 </td>
 </tr>
-	  
+    
+<tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-<a href="https://arxiv.org/abs/2307.04028">
+[4] <a href="https://arxiv.org/abs/2307.04028">
 <papertitle>Measuring the Success of Diffusion Models at Imitating Human Artists</papertitle>
 </a>
 <br>
@@ -251,7 +383,7 @@ Stephen Casper*,
 Carl Guo*,
 Shreya Mogulothu,
 Chinmay Deshpande,
-<strong>Rui-Jie Yew</strong>,
+Rui-Jie Yew,
 Zheng Dai,
 Dylan Hadfield-Menell
 <br>
@@ -260,13 +392,13 @@ Dylan Hadfield-Menell
 </td>
 </tr>
 
-
+<tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-<a href="https://dl.acm.org/doi/10.1145/3514094.3534130">
+[3] <a href="https://dl.acm.org/doi/10.1145/3514094.3534130">
 <papertitle>A Penalty Default Approach to Preemptive Harm Disclosure and Mitigation for AI Systems</papertitle>
 </a>
 <br>
-<strong>Rui-Jie Yew</strong>,
+Rui-Jie Yew,
 Dylan Hadfield-Menell
 <br>
 <em>AAAI/ACM AIES</em>, 2022
@@ -274,12 +406,13 @@ Dylan Hadfield-Menell
 </td>
 </tr>
 
+<tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-<a href="https://dl.acm.org/doi/abs/10.1145/3531146.3533163">
+[2] <a href="https://dl.acm.org/doi/abs/10.1145/3531146.3533163">
 <papertitle>Regulating Facial Processing Technologies: Tensions Between Legal and Technical Considerations in the Application of Illinois BIPA</papertitle>
 </a>
 <br>
-<strong>Rui-Jie Yew</strong>,
+Rui-Jie Yew,
 Alice Xiang
 <br>
 <em>ACM FAccT</em>, 2022
@@ -287,13 +420,14 @@ Alice Xiang
 </td>
 </tr>
 
+<tr>
 <td style="padding:10px;width:75%;vertical-align:middle">
-<a href="https://ojs.aaai.org/index.php/AAAI/article/view/17381">
+[1] <a href="https://ojs.aaai.org/index.php/AAAI/article/view/17381">
 <papertitle>Ethical Dilemmas in Strategic Games</papertitle>
 </a>
 <br>
-Pavel Naumov</strong>,
-<strong>Rui-Jie Yew</strong>
+Pavel Naumov,
+Rui-Jie Yew
 <br>
 <em>AAAI</em>, 2021
 <br>
@@ -303,31 +437,24 @@ Pavel Naumov</strong>,
       </tbody></table>
       </div>
 
-      <div id="tab-other" class="tab-panel">
+
+      <div id="tab-heart" class="tab-panel">
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         <tr>
-       <td style="padding:10px;width:75%;vertical-align:middle">
-      <p>At Google, I contributed functionality to enable (ε, 0)-differential privacy with <a href="https://github.com/google/differential-privacy/pull/31">Client-Specified Partitions for Privacy on Beam</a> for histograms. I was lucky to be mentored by Raine Serrano, Miraç Basaran, and Chris Jones.</p>
-      <p>At Sony AI, I researched privacy regulation and case law on biometric technologies, co-authoring a <a href="https://dl.acm.org/doi/fullHtml/10.1145/3531146.3533163">publication at ACM FAccT</a>. I was lucky to be mentored by Alice Xiang.</p>
-      <p>At NIST, I contributed to the <a href="https://airc.nist.gov/airmf-resources/crosswalks/">policy harmonization crosswalks</a> connecting global policy developments with the AI Risk Management Framework. I was lucky to be mentored by Reva Schwartz and Mark Latonero.</p>
-      <p>At MIT, I was co-chair of the <a href="https://mitaiethics.github.io/"> AI Ethics and Policy Group</a> and organized events as part of the <a href="https://tpp.mit.edu/research/research-to-policy-engagement-initiative/">Research to Policy Engagement Initiative</a>.</p>
-      <p>At Brown, I organized the first semester of the CNTR Graduate Tech & Society Seminar and mentored undergraduate students as part of the <a href="https://aireu.cs.brown.edu/">AI REU</a>. </p> 
-        </td>
+          <td style="padding:15px 10px;vertical-align:top">
+            <p>I was born in and grew up in California's East Bay. My parents are third-generation Singaporean. I am working on my Singlish.</p>
+            
+            <p>Beyond research, I am also involved in community and technology initiatives in California as a:</p>
+            <p>
+              • student mentor with the South Bay Chinese Club.<br>
+              • member of the Emerging Technology Subcommittee on the California Cybersecurity Task Force.
+            </p>
+
+            <p>At Brown, I organized the first iteration of the <a href="https://cntr.brown.edu/get-involved/cntr-graduate-seminar">CNTR Graduate Seminar</a>, and was a mentor as part of the <a href="https://explorecsr.cs.brown.edu/ai/index.html">ExploreCSR program</a> in 2024. I am additionally a member of <a href="https://sites.google.com/brown.edu/gwics/">GWiCS+</a>. </p> 
+          </td>
         </tr>
       </tbody></table>
       </div>
-
-      <div id="tab-misc" class="tab-panel">
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr>
-        <td style="padding:10px;width:75%;vertical-align:middle">
-        <p>My name is pronounced "Roo-Jee" in English or 叡洁 in Mandarin.</p>
-        <p>I grew up in California's East Bay. My parents are third-generation Singaporeans.</p>
-        </td>
-      </tr>
-      </tbody></table>
-      </div>
-
 
       </td>
     </tr>
