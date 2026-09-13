@@ -3,9 +3,10 @@
   <title>Rui-Jie Yew</title>
   
   <meta name="author" content="Rui-Jie Yew">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     * {
+      box-sizing: border-box;
       font-family: 'Times New Roman', Times, serif !important;
       font-weight: normal !important;
     }
@@ -14,6 +15,8 @@
       color: #000000; 
       margin: 0;
       padding: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
     a { 
       color: #0000ee; 
@@ -52,6 +55,7 @@
     }
     
     .date-highlight {
+      font-size: 15px;
       color: #000000;
     }
 
@@ -60,18 +64,21 @@
       background: transparent;
       border: 1px solid #000000;
       color: #000000;
-      font-size: 0.78rem;
+      font-size: 15px;
       padding: 1px 6px;
       margin-left: 4px;
     }
 
-    /* Simple monochrome tabs */
+    /* Simple monochrome tabs with mobile scroll support */
     .tab-bar {
       padding: 0;
       border-bottom: 1px solid #000000;
       margin-bottom: 4px;
       display: flex;
       gap: 4px;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
     }
     .tab-btn {
       font-size: 15px;
@@ -82,6 +89,7 @@
       padding: 6px 18px 8px;
       cursor: pointer;
       color: #666666;
+      flex-shrink: 0;
     }
     .tab-btn:hover { 
       color: #000000;
@@ -90,15 +98,22 @@
       color: #000000; 
       border-bottom-color: #000000; 
     }
-    .tab-panel { display: none; }
+    .tab-panel { 
+      display: none; 
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .tab-panel,
+    .tab-panel * {
+      font-size: 15px;
+    }
     .tab-panel.active { display: block; }
     .tab-panel td p:first-child { margin-top: 0; }
 
-    /* Smaller circular profile picture */
+    /* Circular profile picture */
     .profile-img {
-      width: 125px;
-      min-width: 125px;
-      height: 125px;
+      width: 150px;
+      height: 150px;
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 50%;
@@ -106,32 +121,87 @@
       margin: 0;
     }
 
-    /* Enlarged talk thumbnail image */
+    /* Talk thumbnail image */
     .talk-img {
       width: 210px;
-      max-width: 210px;
-      height: 135px;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 210 / 135;
       object-fit: cover;
       display: block;
       border: 1px solid #ddd;
+    }
+
+    /* Main container wrapper */
+    .main-table {
+      width: 100%;
+      max-width: 860px;
+      border: 0px;
+      border-spacing: 0px;
+      border-collapse: separate;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 35px 15px 20px 15px;
+    }
+
+    /* Responsive adjustments for phones */
+    @media (max-width: 600px) {
+      .main-table {
+        padding: 20px 12px 15px 12px;
+      }
+      .bio-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .bio-photo-td {
+        width: 100% !important;
+        min-width: 100% !important;
+        padding: 0 0 15px 0 !important;
+        display: flex;
+        justify-content: center;
+      }
+      .bio-text-td {
+        width: 100% !important;
+        padding: 0 !important;
+        text-align: left;
+      }
+      /* Stack talk thumbnails and descriptions */
+      .talk-row {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+      }
+      .talk-img-td {
+        width: 100% !important;
+        padding: 0 0 10px 0 !important;
+      }
+      .talk-img {
+        width: 100%;
+        max-width: 280px;
+      }
+      .talk-desc-td {
+        width: 100% !important;
+        padding: 0 !important;
+      }
     }
   </style>
 </head>
 
 <body>
-  <table style="width:100%;max-width:860px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;padding:35px 15px 20px 15px;"><tbody>
+  <table class="main-table"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-bottom:15px;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:0px 24px 15px 0px; width:125px; min-width:125px; vertical-align:top;">
+          <tr class="bio-row" style="padding:0px">
+            <td class="bio-photo-td" style="padding:0px 24px 15px 0px; width:150px; min-width:150px; vertical-align:top;">
               <img class="profile-img" alt="profile photo" src="photo.jpg">
             </td>
-            <td style="padding:0px 0px 15px 0px; vertical-align:top;">
+            <td class="bio-text-td" style="padding:0px 0px 15px 0px; vertical-align:top;">
               <p style="margin-top:0; margin-bottom:12px;">
                 <name>Rui-Jie Yew</name>
               </p>
-              <p style="margin-top:0;"> I am a final-year PhD student in computer science at <a href="https://cs.brown.edu">Brown University</a> and the <a href="http://cntr.brown.edu">CNTR</a>, where I am fortunate to be advised by Professor Suresh Venkatasubramanian. I conduct interdisciplinary research in tech policy and law with an emphasis on loopholes, avoision, and incentives.</p>
+              <p style="margin-top:0;"> I am a final-year PhD student in computer science at <a href="https://cs.brown.edu">Brown University</a> and the <a href="http://cntr.brown.edu">CNTR</a>, where I am advised by Professor Suresh Venkatasubramanian. I conduct interdisciplinary research in tech policy and law with an emphasis on loopholes, avoision, and incentives.</p>
               <p> Currently, I am an ML PhD / AI resident at <a href="https://x.company/factory/">[Google] X, The Moonshot Factory</a>. I was recently a spring 2026 law and society fellow at the <a href="https://simons.berkeley.edu/homepage">Simons Institute for the Theory of Computing at UC Berkeley</a>.</p>
               <p> I hold an S.M. in technology and policy from <a href="https://mit.edu">MIT</a> and a B.A. from <a href="https://scrippscollege.edu">Scripps College</a>.</p>
             </td>
@@ -210,11 +280,11 @@
       <!-- TALKS TAB -->
       <div id="tab-talks" class="tab-panel">
       <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr>
-          <td style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
+        <tr class="talk-row">
+          <td class="talk-img-td" style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
             <img class="talk-img" src="images/governance-frontier.jpg" alt="Governance at the Technological Frontier Workshop">
           </td>
-          <td style="padding:15px 0px;vertical-align:top">
+          <td class="talk-desc-td" style="padding:15px 0px;vertical-align:top">
             <papertitle><strong>Governance at the Technological Frontier</strong></papertitle><br>
             <em>Simons Institute for the Theory of Computing, UC Berkeley</em><br>
             <span class="date-highlight">April 30, 2026</span><br>
@@ -222,11 +292,11 @@
             <a href="https://www.youtube.com/watch?v=05iGoQMcqKc&t=69s&pp=ygUVamVycnkgbWNuZXJuZXkgc2ltb25z">[Video Recording]</a>
           </td>
         </tr>
-        <tr>
-          <td style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
+        <tr class="talk-row">
+          <td class="talk-img-td" style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
             <img class="talk-img" src="images/alignment-problems.jpg" alt="Alignment Problems in AI Governance">
           </td>
-          <td style="padding:15px 0px;vertical-align:top">
+          <td class="talk-desc-td" style="padding:15px 0px;vertical-align:top">
             <papertitle><strong>Alignment Problems in AI Governance</strong></papertitle><br>
             <em>Simons Institute for the Theory of Computing, UC Berkeley</em><br>
             <span class="date-highlight">February 11, 2026</span><br>
@@ -234,24 +304,22 @@
             <a href="https://www.youtube.com/watch?v=rV2PFHQzj48">[Video Recording]</a>
           </td>
         </tr>
-        <tr>
-
-        <td style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
-          <img class="talk-img" src="images/upperbound.jpg" alt="Data Privacy and AI at UpperBound">
-        </td>
-        <td style="padding:15px 0px;vertical-align:top">
-          <papertitle><strong>Data Privacy and AI</strong></papertitle><br>
-          <em>UpperBound AI (University of Alberta), Edmonton, Canada</em><br>
-          <span class="date-highlight">May 20, 2025</span><br>
-          Invited talk on data privacy, protection, and machine learning regulation.
-        </td>
-      </tr>
-
-        <tr>
-          <td style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
+        <tr class="talk-row">
+          <td class="talk-img-td" style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
+            <img class="talk-img" src="images/upperbound.jpg" alt="Data Privacy and AI at UpperBound">
+          </td>
+          <td class="talk-desc-td" style="padding:15px 0px;vertical-align:top">
+            <papertitle><strong>Data Privacy and AI</strong></papertitle><br>
+            <em>UpperBound AI (University of Alberta), Edmonton, Canada</em><br>
+            <span class="date-highlight">May 20, 2025</span><br>
+            Invited talk on data privacy, protection, and machine learning regulation.
+          </td>
+        </tr>
+        <tr class="talk-row">
+          <td class="talk-img-td" style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
             <img class="talk-img" src="images/aies2024.jpg" alt="AIES 2024">
           </td>
-          <td style="padding:15px 0px;vertical-align:top">
+          <td class="talk-desc-td" style="padding:15px 0px;vertical-align:top">
             <papertitle><strong>You Still See Me: How Data Protection Supports the Architecture of AI Surveillance</strong></papertitle><br>
             <em>Conference on AI, Ethics, and Society, San Jose, California</em><br>
             <span class="date-highlight">October, 2024</span><br>
@@ -259,12 +327,11 @@
             <a href="https://cntr.brown.edu/news/2024-11-18/rui-jie-yew-aies-paper-award">[Brown University Coverage]</a>
           </td>
         </tr>
-
-        <tr>
-          <td style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
+        <tr class="talk-row">
+          <td class="talk-img-td" style="padding:15px 15px 15px 0px;width:220px;vertical-align:top">
             <img class="talk-img" src="images/aies2022.jpg" alt="AIES 2024">
           </td>
-          <td style="padding:15px 0px;vertical-align:top">
+          <td class="talk-desc-td" style="padding:15px 0px;vertical-align:top">
             <papertitle><strong>A Penalty Default Approach to Preemptive Harm Disclosure and Mitigation for AI Systems</strong></papertitle><br>
             <em>Conference on AI, Ethics, and Society, Oxford, England</em><br>
             <span class="date-highlight">August, 2022</span><br>
