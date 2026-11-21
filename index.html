@@ -90,6 +90,21 @@
       font-style: italic;
       color: #333333;
     }
+    .exp-item {
+      cursor: default;
+    }
+    .exp-label {
+      font-weight: bold;
+      border-bottom: 1px dotted #555555;
+    }
+    .exp-orgs {
+      display: none;
+      font-weight: normal;
+    }
+    .exp-item:hover .exp-orgs,
+    .exp-item:focus .exp-orgs {
+      display: inline;
+    }
   </style>
 </head>
 <body>
@@ -99,25 +114,27 @@
     <img src="photo.jpg" width="140" alt="Rui-Jie Yew" class="profile-photo">
     <h1>Rui-Jie Yew</h1>
     <p>
-      I am a final-year PhD student in computer science at <a href="https://cs.brown.edu">Brown University</a> and the <a href="http://cntr.brown.edu">CNTR</a>, where I am very fortunate to be advised by Professor Suresh Venkatasubramanian. Currently, I am an ML PhD / AI resident at <a href="https://x.company/factory/">[Google] X, The Moonshot Factory</a> building multi-agent systems. I was recently a spring 2026 law and society fellow at the <a href="https://simons.berkeley.edu/homepage">Simons Institute for the Theory of Computing at UC Berkeley</a>.
+      I am a final-year PhD student in computer science at <b><a href="https://cs.brown.edu">Brown University</a></b> and the <b><a href="http://cntr.brown.edu">CNTR</a></b>, where I am very fortunate to be advised by Professor Suresh Venkatasubramanian. Currently, I am an ML PhD / AI resident at <b><a href="https://x.company/factory/">[Google] X, The Moonshot Factory</a></b> building multi-agent systems. I was recently a spring 2026 law and society fellow at the <b><a href="https://simons.berkeley.edu/homepage">Simons Institute for the Theory of Computing at UC Berkeley</a></b>.
     </p>
 
     <p>
         I am interested in technology and AI policy, with an emphasis on incentives, avoision, and alignment. I conduct interdisciplinary research and have co-authored research papers and blogposts (read: made friends) with lawyers, cryptographers, historians, political scientists, logicians, and machine learning scientists.
       </p>
 
-    <p><a href="#" id="more-toggle" onclick="toggleMore(event)">more about</a></p>
-
-    <div id="more-about-me" style="display: none;">
       <p>
         Our work has received best paper awards and spotlight recognition at ICML Workshop on Generative AI and Law, ACM Designing Interactive Systems Conference, and the AAAI/ACM Conference on AI, Ethics, and Society.
       </p>
       <p>
-        My previous experience spans engineering (Google, Robinhood Markets), research (Sony AI, MIT CSAIL, UC Berkeley CHAI), governance/compliance/risk management (National Institute of Standards and Technology, Robinhood Markets), and security risk + privacy (Robinhood Markets, Google, California Cybersecurity Taskforce) in the United States.
+        My previous experience spans
+        <span class="exp-item" tabindex="0"><span class="exp-label">engineering</span><span class="exp-orgs"> (Google, Robinhood Markets)</span></span>,
+        <span class="exp-item" tabindex="0"><span class="exp-label">research</span><span class="exp-orgs"> (Sony AI, MIT CSAIL, UC Berkeley CHAI)</span></span>,
+        <span class="exp-item" tabindex="0"><span class="exp-label">risk management</span><span class="exp-orgs"> (National Institute of Standards and Technology, Robinhood Markets)</span></span>,
+        and
+        <span class="exp-item" tabindex="0"><span class="exp-label">security + privacy</span><span class="exp-orgs"> (Robinhood Markets, Google Anonymization, California Cybersecurity Taskforce)</span></span>
+        in the United States.
       </p>
-    </div>
 
-    <p>I am from the East Bay. My name is pronounced like "boujee" with an "r" instead ;). </p>
+    <p>I was born in California's Bay Area and grew up in the East Bay. My name is pronounced like "boujee" with an "r" instead ;). </p>
 
     <p>Email: rjy@alum.mit.edu.</p>
   </div>
@@ -137,7 +154,7 @@
     <li><b>Dec 05, 2025</b>: Defended my dissertation proposal! Super lucky to have Professors Serena Booth and Bryan Choi on my dissertation committee.</li>
     <li><b>Sep 12, 2025</b>: Our work on <a href="https://www.techpolicy.press/sovereignty-myth-making-in-the-ai-race/">sovereign AI</a> was covered in <a href="https://restofworld.org/2025/chinese-us-tech-foreign-ai-dependence/">Rest of World</a>.</li>
     <li><b>Aug 14, 2025</b>: Gave a talk on Red Teaming AI Policy as part of the <a href="https://www.dlapiper.com/en-us">DLA Piper</a> guest speaker series.</li>
-    <li><b>Aug 14, 2025</b>: Attended ACM FAccT in <b>Athens, Greece</b> and presented work on Red-Teaming AI Policy. Recording available <a href="https://www.youtube.com/watch?v=GyUAooJpnIk">[here]</a>.</li>
+    <li><b>Aug 14, 2025</b>: Attended ACM FAccT and presented work on Red-Teaming AI Policy in <b>Athens, Greece</b>. Recording available <a href="https://www.youtube.com/watch?v=GyUAooJpnIk">[here]</a>.</li>
     <li><b>May 20, 2025</b>: Gave a talk on Data Privacy and AI at <a href="https://www.upperbound.ai">UpperBound AI</a> (University of Alberta) in <b>Edmonton, Canada</b>.</li>
     <li><b>Mar 09-14, 2025</b>: Attended <a href="https://www.dagstuhl.de/en/seminars/seminar-calendar/seminar-details/25112">Schloss Dagstuhl Seminar 25112</a> on privacy-enhancing technologies and AI in <b>Wadern, Germany</b>, where I met and reunited (and enjoyed three meals a day in a beautiful castle!) with my research role models!</li>
     <li><b>Feb 17, 2025</b>: Gave a talk on Data Protection and AI for the <a href="https://zest-vessel-e71.notion.site/FATE-Society-Reading-Group-61723b738ba04f8daeb28512e6f8c64e">Mila - Quebec AI Institute FATE and Society Reading Group</a>.</li>
@@ -295,20 +312,5 @@
   </table>
 
   <br>
-
-  <script>
-    function toggleMore(event) {
-      event.preventDefault();
-      var more = document.getElementById("more-about-me");
-      var link = document.getElementById("more-toggle");
-      if (more.style.display === "none") {
-        more.style.display = "block";
-        link.textContent = "less about";
-      } else {
-        more.style.display = "none";
-        link.textContent = "more about";
-      }
-    }
-  </script>
 </body>
 </html>
